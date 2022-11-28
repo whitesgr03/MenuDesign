@@ -1,5 +1,8 @@
 "use strict";
 
+import '../css/main.css';
+
+
 import { createDropdown } from "./dropdown";
 
 const main = (() => {
