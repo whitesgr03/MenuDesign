@@ -1,5 +1,7 @@
 "use strict";
 
+import "../css/dropdown.css";
+
 const createDropdown = (() => {
     const activeItemHover = (dropdown) => {
         if (!dropdown.classList.contains("active")) {
@@ -29,8 +31,6 @@ const createDropdown = (() => {
     return {
         activeItemHover,
     };
-})()
+})();
 
 export { createDropdown };
-
-// 使用 js 建立 指定在 dropdown 內建立 html
