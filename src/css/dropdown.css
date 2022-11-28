@@ -5,6 +5,15 @@
     transform-style: preserve-3d;
 }
 
+.dropdown.menu {
+    transition: border-radius .3s ease;
+}
+
+.dropdown.menu:hover {
+    border-radius: 10px 10px 0px 0px;
+    transition: border-radius 0.1s ease;
+}
+
 .dropdown .title {
     position: relative;
 }
@@ -17,13 +26,12 @@
     top: 50%;
     transform: translateY(-50%);
     margin-left: 5px;
-    transition: transform 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 .dropdown:hover .title::before {
     transform: translateY(-50%) rotate(90deg);
 }
-
 
 .dropdown .list {
     display: flex;
@@ -33,10 +41,11 @@
     left: -1px;
     right: -1px;
     visibility: hidden;
+    opacity: 0;
     pointer-events: none;
+    transform: translateZ(-1px);
     background-color: #fff;
-    transform: translateZ(-100px);
-    transition: transform .4s ease;
+    transition: transform 0.6s ease, opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .dropdown .item {
@@ -44,24 +53,23 @@
     padding: 20px;
     opacity: 0;
     visibility: hidden;
-    transition: all .8s ease;
-    border-left:  1px solid black;
-    border-right:  1px solid black;
-    transition:  opacity .1s ease-in-out, visibility .1s ease-in-out;
+    transition: all 0.8s ease;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
 }
 
 .dropdown .item:nth-child(1) {
-    
-    transition-delay: .01s
+    transition-delay: 0.01s;
 }
 .dropdown .item:nth-child(2) {
-    transition-delay: .03s
+    transition-delay: 0.03s;
 }
 .dropdown .item:nth-child(3) {
-    transition-delay: .05s
+    transition-delay: 0.05s;
 }
 
-.dropdown .item:not(:nth-child(2)){
+.dropdown .item:not(:nth-child(2)) {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -70,34 +78,19 @@
     border-radius: 0px 0px 10px 10px;
 }
 
-.dropdown.active .item:hover {
-    background-color: cornflowerblue;
-}
-
-.dropdown.menu:hover {
-    border-radius: 10px 10px 0px 0px;
-    transition: border-radius .1s ease;
-}
-
 .dropdown:hover .list {
     visibility: visible;
+    opacity: 1;
     pointer-events: all;
     transform: translateZ(-1px) translateY(100%);
-    transition: transform .3s ease;
+    transition: transform 0.1s ease, opacity 0.5s ease;
 }
 
 .dropdown:hover .item {
     opacity: 1;
     visibility: visible;
-    transition:  visibility .1s ease-in-out opacity .1s ease-in-out;
 }
 
-.dropdown:hover .item:nth-child(1) {
-    transition-delay: .15s
-}
-.dropdown:hover .item:nth-child(2) {
-    transition-delay: .1s
-}
-.dropdown:hover .item:nth-child(3) {
-    transition-delay: 0s
+.dropdown.active .item:hover {
+    background-color: cornflowerblue;
 }
