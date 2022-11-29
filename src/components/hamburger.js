@@ -3,33 +3,32 @@
 import "../css/hamburger.css";
 
 const createHamburger = (() => {
-    const activeHamburger = (hamburgerIcon) => {
-        hamburgerIcon.addEventListener("pointerup", openMenu);
+    const activeHamburger = (hamburger) => {
 
-        function openMenu() {
-            const hamburger = this.parentElement;
-
-            hamburger.classList.toggle("active");
-                
-            if (hamburger.classList.contains("active")) {
+        if (!hamburger.classList.contains("active")) {
+            
+            hamburger.classList.add("active");
+            setTimeout(() => {
                 document.addEventListener("pointerdown", closeMenu);
+            });
+        }
+
+        function closeMenu(e) {
+            e.preventDefault();
+            if (e.target.closest(".list") === hamburger.querySelector(".list"))
+                return;
+
+            const icon = hamburger.querySelector(".icon");
+
+            if (
+                (hamburger.classList.contains("active") &&
+                    e.target.closest(".icon") === icon) ||
+                e.target.closest(".icon") !== icon
+            ) {
+                hamburger.classList.remove("active");
             }
 
-            function closeMenu(e) {
-
-                if (e.target.closest(".list")) {
-                    const target = e.target.closest(".list");
-                    const list = hamburger.lastElementChild;
-
-                    if (target === list) return;
-                }
-
-                if (e.target.closest('.icon') !== hamburgerIcon) {
-                    hamburger.classList.remove("active");
-                }
-                
-                document.removeEventListener("pointerdown", closeMenu);
-            }
+            document.removeEventListener("pointerdown", closeMenu);
         }
     };
 
