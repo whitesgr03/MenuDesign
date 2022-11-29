@@ -35,3 +35,32 @@ const main = (() => {
 })();
 
 export { main };
+
+    
+    // 單獨監聽一個 dropdown menu
+
+    // const drop = document.querySelector('.dropdown')
+
+    // drop.addEventListener("pointerover", () => {
+    //     createDropdown.activeItemHover(drop);
+    // });
+
+
+    // 單獨監聽一個 hamburger menu
+    
+    // const hamburger = document.querySelector(".hamburger");
+
+    // hamburger.addEventListener('pointerdown', () => {
+        
+    //     createHamburger.activeHamburger(hamburger);
+    // })
+
+    // 單獨監聽一個 tabs menu
+
+    // const tabs = document.querySelector(".tabs");
+
+    // tabs.addEventListener("pointerdown", (e) => {
+
+    //     const tab = e.target.closest(".item");
+    //     createTabs.activeTab(tabs, tab);
+    // });
