@@ -4,17 +4,30 @@ import "../css/dropdown.css";
 
 const createDropdown = (() => {
     const activeItemHover = (dropdown) => {
-        if (!dropdown.classList.contains("active")) {
+
+        if (
+            !dropdown.classList.contains("incomplete") &&
+            !dropdown.classList.contains("active")
+        ) {
+            dropdown.classList.add("incomplete");
+        } else {
+            return
+        }
+
+        if (
+            dropdown.classList.contains("incomplete") &&
+            !dropdown.classList.contains("active")
+        ) {
             const title = dropdown.querySelector(".title");
             title.addEventListener("transitionend", setItemHover);
         }
-
-        dropdown.addEventListener("pointerout", closeItemHover);
-
-        function setItemHover(e) {
-            const dropdown = e.target.closest(".dropdown");
+        
+        function setItemHover() {
 
             dropdown.classList.add("active");
+            dropdown.classList.remove("incomplete");
+
+            dropdown.addEventListener("pointerout", closeItemHover);
 
             this.removeEventListener("transitionend", setItemHover);
         }
