@@ -30,6 +30,13 @@ input {
     line-height: 1rem;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
 button {
     border: 0;
     padding: 0;
