@@ -18,6 +18,8 @@ const main = (() => {
     }
 
     function activeMenuOnClick(e) {
+        e.preventDefault();
+
         if (e.target.closest(".hamburger")) {
             const hamburger = e.target.closest(".hamburger");
             createHamburger.activeHamburger(hamburger);
@@ -25,9 +27,23 @@ const main = (() => {
 
         if (e.target.closest(".tabs")) {
             const menu = e.target.closest(".tabs");
-            const tab = e.target.closest(".item");
+
+            let tab = null;
+
+            if (e.target.closest(".hamburger")) {
+                tab = e.target.closest(".hamburger").parentElement;
+            } else {
+                tab = e.target.closest(".item");
+            }
+
+            const hamburger = e.target.closest(".hamburger");
 
             createTabs.activeTab(menu, tab);
+
+            if (hamburger) {
+                import("../css/tabsDropdown.css");
+                createHamburger.activeHamburger(hamburger);
+            }
         }
     }
 })();
