@@ -1,0 +1,36 @@
+/* tabsDropdown */
+
+.tabsDropdown > .list > :last-child {
+    position: relative;
+}
+
+.tabsDropdown .hamburger .list {
+    position: absolute;
+    top: 100%;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: auto;
+    background-color: #fff;
+    border: 1px solid black;
+    transition: all 0s ease;
+    row-gap: 10px;
+}
+
+.tabsDropdown .hamburger.active .list {
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+}
+
+.tabsDropdown .hamburger .item {
+    padding: 0;
+    white-space: nowrap;
+}
+
+.tabsDropdown .hamburger .item > button {
+    border-radius: 0;
+    padding:  10px 20px;
+    width: 100%;
+}
