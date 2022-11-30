@@ -50,31 +50,45 @@ const main = (() => {
 
 export { main };
 
-    
-    // 單獨監聽一個 dropdown menu
+// 單獨監聽一個 dropdown menu
 
-    // const drop = document.querySelector('.dropdown')
+// const drop = document.querySelector('.dropdown')
 
-    // drop.addEventListener("pointerover", () => {
-    //     createDropdown.activeItemHover(drop);
-    // });
+// drop.addEventListener("pointerover", () => {
+//     createDropdown.activeItemHover(drop);
+// });
 
+// 單獨監聽一個 hamburger menu
 
-    // 單獨監聽一個 hamburger menu
-    
-    // const hamburger = document.querySelector(".hamburger");
+// const hamburger = document.querySelector(".hamburger");
 
-    // hamburger.addEventListener('pointerdown', () => {
-        
-    //     createHamburger.activeHamburger(hamburger);
-    // })
+// hamburger.addEventListener('pointerdown', () => {
 
-    // 單獨監聽一個 tabs menu
+//     createHamburger.activeHamburger(hamburger);
+// })
 
-    // const tabs = document.querySelector(".tabs");
+// 單獨監聽一個 tabs menu
 
-    // tabs.addEventListener("pointerdown", (e) => {
+// const tabs = document.querySelector(".tabs");
 
-    //     const tab = e.target.closest(".item");
-    //     createTabs.activeTab(tabs, tab);
-    // });
+// tabs.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     const menu = e.target.closest(".tabs");
+
+//     let tab = null;
+
+//     if (e.target.closest(".hamburger")) {
+//         tab = e.target.closest(".hamburger").parentElement;
+//     } else {
+//         tab = e.target.closest(".item");
+//     }
+
+//     const hamburger = e.target.closest(".hamburger");
+
+//     createTabs.activeTab(menu, tab);
+
+//     if (hamburger) {
+//         createHamburger.activeHamburger(hamburger);
+//     }
+// });
