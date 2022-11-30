@@ -7,10 +7,8 @@ import { createHamburger } from "./hamburger";
 import { createTabs } from "./tabs";
 
 const main = (() => {
-    document.addEventListener("pointerdown", activeMenuOnClick);
     document.addEventListener("pointerover", activeMenuOnOver);
-
-
+    document.addEventListener("click", activeMenuOnClick);
 
     function activeMenuOnOver(e) {
         if (e.target.closest(".dropdown")) {
