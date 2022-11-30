@@ -1,11 +1,11 @@
 /* tabs */
 
-.tabs .list{
+.tabs .list {
     display: flex;
     justify-content: space-evenly;
 }
 
-.tabs > .list > .item > :first-child{
+.tabs > .list > .item > :first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,5 +33,6 @@
 }
 
 .tabs > .list > .item.active span {
-    filter: invert(56%) sepia(43%) saturate(1693%) hue-rotate(194deg) brightness(96%) contrast(93%);
+    filter: invert(56%) sepia(43%) saturate(1693%) hue-rotate(194deg)
+        brightness(96%) contrast(93%);
 }
