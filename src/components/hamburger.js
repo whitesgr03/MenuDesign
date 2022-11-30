@@ -4,12 +4,10 @@ import "../css/hamburger.css";
 
 const createHamburger = (() => {
     const activeHamburger = (hamburger) => {
-
         if (!hamburger.classList.contains("active")) {
-            
             hamburger.classList.add("active");
             setTimeout(() => {
-                document.addEventListener("pointerdown", closeMenu);
+                document.addEventListener("click", closeMenu);
             });
         }
 
@@ -28,7 +26,7 @@ const createHamburger = (() => {
                 hamburger.classList.remove("active");
             }
 
-            document.removeEventListener("pointerdown", closeMenu);
+            document.removeEventListener("click", closeMenu);
         }
     };
 
