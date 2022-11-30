@@ -5,33 +5,33 @@
     justify-content: space-evenly;
 }
 
-.tabs .list a{
+.tabs > .list > .item > :first-child{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.tabs .list .icon {
+.tabs > .list .icon {
     width: 25px;
     height: 25px;
     background-size: cover;
     display: inline-block;
 }
 
-.tabs .item:nth-child(1) .icon {
+.tabs > .list > .item:nth-child(1) .icon {
     background-image: url("../img/home.png");
 }
-.tabs .item:nth-child(2) .icon {
+.tabs > .list > .item:nth-child(2) .icon {
     background-image: url("../img/ballot.png");
 }
-.tabs .item:nth-child(3) .icon {
+.tabs > .list > .item:nth-child(3) .icon {
     background-image: url("../img/play.png");
 }
-.tabs .item:nth-child(4) .icon {
+.tabs > .list > .item:nth-child(4) .icon {
     background-image: url("../img/photo.png");
 }
 
-.tabs .item.active span {
+.tabs > .list > .item.active span {
     filter: invert(56%) sepia(43%) saturate(1693%) hue-rotate(194deg) brightness(96%) contrast(93%);
 }
