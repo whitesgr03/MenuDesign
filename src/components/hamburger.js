@@ -12,8 +12,10 @@ const createHamburger = (() => {
         }
 
         function closeMenu(e) {
-            e.preventDefault();
-            if (e.target.closest(".list") === hamburger.querySelector(".list"))
+            if (
+                e.target.closest(".list") &&
+                e.target.closest(".list") === hamburger.querySelector(".list")
+            )
                 return;
 
             const icon = hamburger.querySelector(".icon");
