@@ -5,6 +5,7 @@ import "../css/main.css";
 import { createDropdown } from "./dropdown";
 import { createHamburger } from "./hamburger";
 import { createTabs } from "./tabs";
+import { createCarousel } from "./carousel";
 
 const main = (() => {
     document.addEventListener("pointerover", activeMenuOnOver);
@@ -43,6 +44,20 @@ const main = (() => {
             if (hamburger) {
                 import("../css/tabsDropdown.css");
                 createHamburger.activeHamburger(hamburger);
+            }
+        }
+
+        if (e.target.closest(".carousel")) {
+
+            const carousel = createCarousel(e.target.closest(".carousel")) 
+
+            if (e.target.closest(".arrow")) {
+                const arrow = e.target.closest(".arrow").classList[1];
+                carousel.scrollByClick(arrow);
+            }
+
+            if (e.target.closest(".list")) {
+                carousel.scrollByPointerMove(e);
             }
         }
     }
@@ -90,5 +105,20 @@ export { main };
 
 //     if (hamburger) {
 //         createHamburger.activeHamburger(hamburger);
+//     }
+// });
+
+// 單獨監聽一個 carousel menu
+
+// const carousel = document.querySelector(".carousel");
+
+// carousel.addEventListener("pointerdown", (e) => {
+//     if (e.target.closest(".arrow")) {
+//         const arrow = e.target.closest(".arrow").classList[1];
+//         createCarousel.scrollByClick(arrow);
+//     }
+
+//     if (e.target.closest(".list")) {
+//         createCarousel.scrollByPointerMove(e);
 //     }
 // });
