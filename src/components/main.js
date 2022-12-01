@@ -8,10 +8,10 @@ import { createTabs } from "./tabs";
 import { createCarousel } from "./carousel";
 
 const main = (() => {
-    document.addEventListener("pointerover", activeMenuOnOver);
+    document.addEventListener("pointerover", activeMenuOnPointerOver);
     document.addEventListener("click", activeMenuOnClick);
 
-    function activeMenuOnOver(e) {
+    function activeMenuOnPointerOver(e) {
         if (e.target.closest(".dropdown")) {
             const dropdown = e.target.closest(".dropdown");
             createDropdown.activeItemHover(dropdown);
