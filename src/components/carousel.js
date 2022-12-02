@@ -37,7 +37,7 @@ const createCarousel = (carousel) => {
             e.preventDefault();
         });
 
-        list.setPointerCapture(e.pointerId);
+        const pointerId = e.pointerId;
 
         let shiftX = e.clientX - list.getBoundingClientRect().left;
 
