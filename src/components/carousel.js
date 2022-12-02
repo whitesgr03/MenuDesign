@@ -45,6 +45,8 @@ const createCarousel = (carousel) => {
         document.addEventListener("pointerup", onPointerUp);
 
         function onPointerMove(e) {
+            list.setPointerCapture(pointerId);
+
             let newLeft =
                 e.clientX - shiftX - wrap.getBoundingClientRect().left;
 
