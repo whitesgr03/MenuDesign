@@ -2,8 +2,8 @@
 
 import "../css/dropdown.css";
 
-const createDropdown = (() => {
-    const activeItemHover = (dropdown) => {
+const createDropdown = (dropdown) => {
+    const activeItemHover = () => {
         if (
             !dropdown.classList.contains("incomplete") &&
             !dropdown.classList.contains("active")
@@ -42,6 +42,6 @@ const createDropdown = (() => {
     return {
         activeItemHover,
     };
-})();
+};
 
 export { createDropdown };
