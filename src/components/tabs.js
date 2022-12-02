@@ -16,6 +16,18 @@ const createTabs = (tabs) => {
             currentActiveTab.classList.remove("active");
         }
         tab.classList.add("active");
+        tabs.classList.add("active");
+
+        setTimeout(() => {
+            document.addEventListener("pointerup", closeMenu);
+        });
+
+        function closeMenu(e) {
+            if (e.target.closest(".tabs") === tabs) return;
+
+            tabs.classList.remove("active");
+            document.removeEventListener("pointerup", closeMenu);
+        }
     };
 
     return {
