@@ -52,60 +52,50 @@ const main = (() => {
 
 export { main };
 
-// 單獨監聽一個 dropdown menu
+// dropdown menu
 
-// const drop = document.querySelector('.dropdown')
+// const dropdown = document.querySelector(".dropdown");
+// const dropdownMethod = createDropdown(dropdown);
 
-// drop.addEventListener("pointerover", () => {
-//     createDropdown.activeItemHover(drop);
+// dropdown.addEventListener("pointerover", () => {
+//     dropdownMethod.activeItemHover();
 // });
 
-// 單獨監聽一個 hamburger menu
+// hamburger menu
 
 // const hamburger = document.querySelector(".hamburger");
+// const hamburgerMethod = createHamburger(hamburger);
 
-// hamburger.addEventListener('pointerdown', () => {
-
-//     createHamburger.activeHamburger(hamburger);
+// hamburger.addEventListener('pointerup', () => {
+//     hamburgerMethod.activeHamburger();
 // })
 
-// 單獨監聽一個 tabs menu
+// tabs menu
+// To use the tabsDropdown menu, you need to load  createHamburger
 
 // const tabs = document.querySelector(".tabs");
+// const tabsMethod = createTabs(tabs);
 
-// tabs.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     const menu = e.target.closest(".tabs");
-
-//     let tab = null;
-
-//     if (e.target.closest(".hamburger")) {
-//         tab = e.target.closest(".hamburger").parentElement;
-//     } else {
-//         tab = e.target.closest(".item");
-//     }
-
-//     const hamburger = e.target.closest(".hamburger");
-
-//     createTabs.activeTab(menu, tab);
-
-//     if (hamburger) {
-//         createHamburger.activeHamburger(hamburger);
+// tabs.addEventListener("pointerup", (e) => {
+//     if (e.target.closest(".item")) {
+//         tabsMethod.activeTab(e.target.closest(".item"));
 //     }
 // });
 
-// 單獨監聽一個 carousel menu
+
+// carousel menu
+// To use the carousel menu, you need to load createTabs
 
 // const carousel = document.querySelector(".carousel");
+// const carouselMethod = createCarousel(carousel);
 
 // carousel.addEventListener("pointerdown", (e) => {
 //     if (e.target.closest(".arrow")) {
 //         const arrow = e.target.closest(".arrow").classList[1];
-//         createCarousel.scrollByClick(arrow);
+//         carouselMethod.scrollByClick(arrow);
 //     }
 
 //     if (e.target.closest(".list")) {
-//         createCarousel.scrollByPointerMove(e);
+//         carouselMethod.scrollByPointerMove(e);
 //     }
 // });
