@@ -41,8 +41,10 @@ const createCarousel = (carousel) => {
 
         let shiftX = e.clientX - list.getBoundingClientRect().left;
 
-        document.addEventListener("pointermove", onPointerMove);
-        document.addEventListener("pointerup", onPointerUp);
+        setTimeout(() => {
+            document.addEventListener("pointermove", onPointerMove);
+            document.addEventListener("pointerup", onPointerUp);
+        },);
 
         function onPointerMove(e) {
             list.setPointerCapture(pointerId);
