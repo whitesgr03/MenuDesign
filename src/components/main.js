@@ -9,47 +9,34 @@ import { createCarousel } from "./carousel";
 
 const main = (() => {
     document.addEventListener("pointerover", activeMenuOnPointerOver);
-    document.addEventListener("click", activeMenuOnClick);
+    document.addEventListener("pointerdown", activeMenuOnPointerDown);
+    document.addEventListener("pointerup", activeMenuOnPointerUp);
 
     function activeMenuOnPointerOver(e) {
         if (e.target.closest(".dropdown")) {
-            const dropdown = e.target.closest(".dropdown");
-            createDropdown.activeItemHover(dropdown);
+            const dropdown = createDropdown(e.target.closest(".dropdown"));
+
+            dropdown.activeItemHover();
         }
     }
-
-    function activeMenuOnClick(e) {
-        e.preventDefault();
-
+    function activeMenuOnPointerUp(e) {
         if (e.target.closest(".hamburger")) {
-            const hamburger = e.target.closest(".hamburger");
-            createHamburger.activeHamburger(hamburger);
+            const hamburger = createHamburger(e.target.closest(".hamburger"));
+
+            hamburger.activeHamburger(e);
         }
 
         if (e.target.closest(".tabs")) {
-            const menu = e.target.closest(".tabs");
+            if (e.target.closest(".item")) {
+                const tabs = createTabs(e.target.closest(".tabs"));
 
-            let tab = null;
-
-            if (e.target.closest(".hamburger")) {
-                tab = e.target.closest(".hamburger").parentElement;
-            } else {
-                tab = e.target.closest(".item");
-            }
-
-            const hamburger = e.target.closest(".hamburger");
-
-            createTabs.activeTab(menu, tab);
-
-            if (hamburger) {
-                import("../css/tabsDropdown.css");
-                createHamburger.activeHamburger(hamburger);
+                tabs.activeTab(e.target.closest(".item"));
             }
         }
-
+    }
+    function activeMenuOnPointerDown(e) {
         if (e.target.closest(".carousel")) {
-
-            const carousel = createCarousel(e.target.closest(".carousel")) 
+            const carousel = createCarousel(e.target.closest(".carousel"));
 
             if (e.target.closest(".arrow")) {
                 const arrow = e.target.closest(".arrow").classList[1];
