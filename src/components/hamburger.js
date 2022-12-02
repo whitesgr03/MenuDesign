@@ -13,7 +13,7 @@ const createHamburger = (hamburger) => {
         setTimeout(() => {
             document.addEventListener("pointerup", closeMenu);
         });
-    
+
         function closeMenu(e) {
             if (e.target.closest(".list") === list) return;
 

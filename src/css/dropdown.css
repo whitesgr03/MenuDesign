@@ -9,7 +9,7 @@
 }
 
 .dropdown.menu {
-    transition: border-radius .3s ease;
+    transition: border-radius 0.3s ease;
 }
 
 .dropdown.menu:hover {

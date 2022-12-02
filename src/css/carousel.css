@@ -8,6 +8,9 @@
 .carousel .arrow {
     background: white;
     border-radius: 20px;
+    width: 48px;
+    height: 48px;
+    font-size: 25px;
     border: 1px solid black;
     color: black;
 }
@@ -21,9 +24,8 @@
     color: white;
 }
 
-
 .carousel .wrap {
-    width: 200px;
+    width: 240px;
     height: 100%;
     overflow: hidden;
     position: relative;
@@ -39,7 +41,7 @@
 
 .carousel .list a {
     display: inline-block;
-    width: 50px;
+    width: 60px;
 }
 
 .carousel .list .icon {

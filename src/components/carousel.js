@@ -7,7 +7,7 @@ const createCarousel = (carousel) => {
     const list = wrap.querySelector(".list");
     const items = list.querySelectorAll("li").length;
 
-    const ITEM_WIDTH = 50; // The width of each li tag
+    const ITEM_WIDTH = 60; // The width of each li tag
     let itemCount = 4; // The item count that the carousel will display
 
     const scrollByClick = (direction) => {
@@ -44,7 +44,7 @@ const createCarousel = (carousel) => {
         setTimeout(() => {
             document.addEventListener("pointermove", onPointerMove);
             document.addEventListener("pointerup", onPointerUp);
-        },);
+        });
 
         function onPointerMove(e) {
             list.setPointerCapture(pointerId);
