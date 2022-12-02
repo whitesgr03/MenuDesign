@@ -10,11 +10,14 @@ const createHamburger = (hamburger) => {
 
         hamburger.classList.add("active");
 
+        setTimeout(() => {
+            document.addEventListener("pointerup", closeMenu);
+        });
+    
         function closeMenu(e) {
             if (e.target.closest(".list") === list) return;
 
             hamburger.classList.remove("active");
-            console.log('remove')
             document.removeEventListener("pointerup", closeMenu);
         }
     };
