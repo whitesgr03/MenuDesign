@@ -1,23 +1,26 @@
 "use strict";
 
 import "../css/tabs.css";
+import "../css/tabsDropdown.css";
 
-const createTabs = (() => {
-    const activeTab = (menu, tab) => {
-        if (!tab) return;
+const createTabs = (tabs) => {
+    const list = tabs.querySelector(".list");
+    const listChild = Array.from(list.children);
 
-        const currentActiveTab = menu.querySelector(".active");
+    const activeTab = (tab) => {
+        if (listChild.findIndex((item) => item === tab) === -1) return;
+
+        const currentActiveTab = list.querySelector(".item.active");
 
         if (currentActiveTab) {
             currentActiveTab.classList.remove("active");
         }
-
         tab.classList.add("active");
     };
 
     return {
         activeTab,
     };
-})();
+};
 
 export { createTabs };
