@@ -15,6 +15,7 @@ import image3 from "../img/big3.jpg";
 import image4 from "../img/big4.jpg";
 import image5 from "../img/big5.jpg";
 import image6 from "../img/big6.jpg";
+import image7 from "../img/big7.jpg";
 
 const main = (() => {
     const circularCarousel = document.querySelector(".carousel.circular");
@@ -36,7 +37,7 @@ const main = (() => {
     document.addEventListener("pointerup", activeMenuOnPointerUp);
 
     function getSources() {
-        return [image, image2, image3, image4, image5, image6];
+        return [image, image2, image3, image4, image5, image6, image7];
     }
 
     function activeMenuOnPointerOver(e) {
