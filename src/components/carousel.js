@@ -2,35 +2,13 @@
 
 import "../css/carousel.css";
 
-const createCarousel = (carousel) => {
+const createCarousel = (carousel, width, count) => {
     const wrap = carousel.querySelector(".wrap");
     const list = wrap.querySelector(".list");
     const items = list.querySelectorAll("li").length;
 
-    const ITEM_WIDTH = 60; // The width of each li tag
-    let itemCount = 4; // The item count that the carousel will display
-
-    const scrollByClick = (direction) => {
-        let leftEdge =
-            list.getBoundingClientRect().left -
-            wrap.getBoundingClientRect().left;
-
-        switch (direction) {
-            case "prev":
-                leftEdge += ITEM_WIDTH * itemCount;
-                leftEdge = Math.min(leftEdge, 0);
-                break;
-            case "next":
-                leftEdge -= ITEM_WIDTH * itemCount;
-                leftEdge = Math.max(
-                    leftEdge,
-                    -ITEM_WIDTH * (items - itemCount)
-                );
-                break;
-        }
-
-        list.style.transform = `translateX(${leftEdge}px)`;
-    };
+    const itemWidth = width; // The width of each li tag
+    const itemCount = count; // Number of items displayed per slide
 
     const scrollByPointerMove = (e) => {
         list.addEventListener("dragstart", (e) => {
@@ -56,7 +34,8 @@ const createCarousel = (carousel) => {
                 newLeft = 0;
             }
 
-            let rightEdge = (items - itemCount) * ITEM_WIDTH;
+            let rightEdge = (items - itemCount) * itemWidth;
+            console.log(newLeft);
 
             if (newLeft < -rightEdge) {
                 newLeft = -rightEdge;
@@ -76,7 +55,6 @@ const createCarousel = (carousel) => {
     };
 
     return {
-        scrollByClick,
         scrollByPointerMove,
     };
 };
